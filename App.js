@@ -24,6 +24,13 @@ export default function App() {
   return (
     <SafeAreaView style={styles.container}>
       <StatusBar style="light-content" />
+      <FlatList
+        data={keyboardLayout}
+        numColumns={shape.colums}
+        renderItem={CalcButton}
+        keyExtractor={(item) => item.id}
+        contentContainerStyle={styles.keyboard}
+      />
     </SafeAreaView>
   );
 }
