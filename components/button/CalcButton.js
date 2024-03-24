@@ -1,16 +1,21 @@
 import { Image, Text, TouchableOpacity } from "react-native";
 import styles from "./CalcButton.style";
+import { colors } from "../../constants";
+import { shape } from "../../constants/keyboardLayout";
 
 const CalcButton = ({ item }) => {
   return (
     <TouchableOpacity
       style={[
         styles.button,
-        item.id % 4 == 0
-          ? styles.blueButton
-          : item.id < 4
-            ? styles.whiteGrayButton
-            : styles.grayButton,
+        {
+          backgroundColor:
+            item.id % shape.colums == 0
+              ? colors.highEmphasis
+              : item.id < 4
+                ? colors.lowEmphasis
+                : colors.mediumEmphasis,
+        },
       ]}
     >
       {item.icon != "" ? (
