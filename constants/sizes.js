@@ -1,8 +1,8 @@
 const sizes = {
   button: {
     fontSize: 30,
-    height: 72,
-    width: 72,
+    height: 82,
+    width: 82,
     borderRadius: 24,
   },
   keyboard: {

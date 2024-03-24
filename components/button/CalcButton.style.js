@@ -8,8 +8,9 @@ const styles = StyleSheet.create({
     borderRadius: sizes.button.borderRadius,
     height: sizes.button.height,
     width: sizes.button.width,
-    marginTop: 15,
-    marginHorizontal: 10,
+    padding: 15,
+    marginTop: 20,
+    marginHorizontal: 12,
   },
   textButton: {
     fontFamily: "Work-Sans",
