@@ -11,10 +11,10 @@ const CalcButton = ({ item }) => {
         {
           backgroundColor:
             item.id % shape.colums == 0
-              ? colors.highEmphasis
+              ? colors.button.highEmphasis
               : item.id < 4
-                ? colors.lowEmphasis
-                : colors.mediumEmphasis,
+                ? colors.button.lowEmphasis
+                : colors.button.mediumEmphasis,
         },
       ]}
     >
