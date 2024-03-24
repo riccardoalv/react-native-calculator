@@ -30,13 +30,25 @@ export default function App() {
         <Text numberOfLines={1} style={styles.historyText}>
           {history}
         </Text>
-        <Text numberOfLines={1} style={styles.currentText}>
+        {/*TODO: make this a horizontal ScrollView and set a min font size*/}
+        <Text
+          numberOfLines={1}
+          style={styles.currentText}
+          adjustsFontSizeToFit={true}
+        >
           {current}
         </Text>
         <FlatList
           data={keyboardLayout}
           numColumns={shape.colums}
-          renderItem={CalcButton}
+          renderItem={({ item }) => (
+            <CalcButton
+              item={item}
+              onPress={() => {
+                setCurrent(item.handle(current));
+              }}
+            />
+          )}
           keyExtractor={(item) => item.id}
           contentContainerStyle={styles.keyboard}
         />

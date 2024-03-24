@@ -3,9 +3,10 @@ import styles from "./CalcButton.style";
 import { colors } from "../../constants";
 import { shape } from "../../constants/keyboardLayout";
 
-const CalcButton = ({ item }) => {
+const CalcButton = ({ item, onPress }) => {
   return (
     <TouchableOpacity
+      onPress={onPress}
       style={[
         styles.button,
         {
