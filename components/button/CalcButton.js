@@ -13,8 +13,8 @@ const CalcButton = ({ item }) => {
             item.id % shape.colums == 0
               ? colors.button.highEmphasis
               : item.id < 4
-                ? colors.button.lowEmphasis
-                : colors.button.mediumEmphasis,
+                ? colors.button.mediumEmphasis
+                : colors.button.lowEmphasis,
         },
       ]}
     >

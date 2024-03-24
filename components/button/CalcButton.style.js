@@ -10,7 +10,7 @@ const styles = StyleSheet.create({
     width: sizes.button.width,
     padding: 15,
     marginTop: 20,
-    marginHorizontal: 12,
+    marginHorizontal: 8,
   },
   textButton: {
     fontFamily: "Work-Sans",
