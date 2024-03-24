@@ -1,13 +1,15 @@
 import { StatusBar } from "expo-status-bar";
-import { FlatList, SafeAreaView, StyleSheet, View } from "react-native";
-import { useCallback } from "react";
+import { FlatList, SafeAreaView, Text, View } from "react-native";
+import { useCallback, useState } from "react";
 import { useFonts } from "expo-font";
 import * as SplashScreen from "expo-splash-screen";
 import { CalcButton } from "./components";
 import { keyboardLayout, shape } from "./constants/keyboardLayout";
-import { colors, sizes } from "./constants";
+import styles from "./styles/main.style";
 
 export default function App() {
+  const [current, setCurrent] = useState("123.4+321");
+  const [history, setHistory] = useState("123.4+321");
   const [fontsLoaded, fontError] = useFonts({
     "Work-Sans": require("./assets/fonts/Work_Sans/WorkSans-VariableFont_wght.ttf"),
   });
@@ -24,29 +26,21 @@ export default function App() {
   return (
     <SafeAreaView style={styles.container}>
       <StatusBar style="light-content" />
-      <FlatList
-        data={keyboardLayout}
-        numColumns={shape.colums}
-        renderItem={CalcButton}
-        keyExtractor={(item) => item.id}
-        contentContainerStyle={styles.keyboard}
-      />
+      <View style={styles.main}>
+        <Text numberOfLines={1} style={styles.historyText}>
+          {history}
+        </Text>
+        <Text numberOfLines={1} style={styles.currentText}>
+          {current}
+        </Text>
+        <FlatList
+          data={keyboardLayout}
+          numColumns={shape.colums}
+          renderItem={CalcButton}
+          keyExtractor={(item) => item.id}
+          contentContainerStyle={styles.keyboard}
+        />
+      </View>
     </SafeAreaView>
   );
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    color: colors.white,
-    backgroundColor: colors.background,
-    alignItems: "center",
-    justifyContent: "center",
-  },
-  keyboard: {
-    flex: 1,
-    alignItems: "center",
-    justifyContent: "flex-end",
-    marginBottom: sizes.keyboard.height,
-  },
-});
