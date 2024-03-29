@@ -18,11 +18,11 @@ const styles = StyleSheet.create({
     fontSize: sizes.text.fontSize,
     fontFamily: "Work-Sans",
     textAlign: "right",
-    width: "85%",
+    width: "80%",
     textAlign: "right",
   },
   history: {
-    width: "85%",
+    width: "80%",
   },
   historyText: {
     color: "gray",
