@@ -3,7 +3,7 @@ import { icons } from "../constants";
 
 const keyboardLayout = [
   { id: 1, text: "C", icon: "", handle: (value) => "" },
-  { id: 2, text: "", icon: icons.minus, handle: (value) => value + " - " },
+  { id: 2, text: "", icon: icons.minus, handle: (value) => "- " + value },
   { id: 3, text: "%", icon: "", handle: (value) => value + " % " },
   { id: 4, text: "÷", icon: "", handle: (value) => value + " ÷ " },
   { id: 5, text: "7", icon: "", handle: (value) => value + "7" },
