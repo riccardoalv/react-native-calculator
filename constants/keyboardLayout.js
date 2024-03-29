@@ -1,7 +1,7 @@
 import { icons } from "../constants";
 
 const keyboardLayout = [
-  { id: 1, text: "C", icon: "", handle: (value) => (value = "") },
+  { id: 1, text: "C", icon: "", handle: (value) => "" },
   { id: 2, text: "", icon: icons.minus, handle: (value) => value + " - " },
   { id: 3, text: "%", icon: "", handle: (value) => value + " % " },
   { id: 4, text: "÷", icon: "", handle: (value) => value + " ÷ " },
@@ -25,7 +25,18 @@ const keyboardLayout = [
     icon: icons.deleteIcon,
     handle: (value) => value.slice(0, -1),
   },
-  { id: 20, text: "=", icon: "", handle: (value) => value },
+  {
+    id: 20,
+    text: "=",
+    icon: "",
+    handle: (value) => {
+      const calc = value
+        .replace("×", "*")
+        .replace("÷", "/")
+        .replace("%", "/100 *");
+      return eval(calc).toString();
+    },
+  },
 ];
 
 const shape = {

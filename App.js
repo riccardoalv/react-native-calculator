@@ -45,7 +45,13 @@ export default function App() {
             <CalcButton
               item={item}
               onPress={() => {
-                setCurrent(item.handle(current));
+                const value = item.handle(current);
+                if (item.text === "=") {
+                  setHistory(current);
+                  setCurrent(value);
+                } else {
+                  setCurrent(value);
+                }
               }}
             />
           )}
