@@ -21,12 +21,14 @@ const styles = StyleSheet.create({
     width: "85%",
     textAlign: "right",
   },
+  history: {
+    width: "85%",
+  },
   historyText: {
     color: "gray",
     fontSize: sizes.text.fontSize - 30,
     fontFamily: "Work-Sans",
     textAlign: "right",
-    width: "85%",
     textAlign: "right",
   },
 });
