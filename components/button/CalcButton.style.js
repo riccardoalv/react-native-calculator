@@ -10,7 +10,7 @@ const styles = StyleSheet.create({
     height: sizes.button.height,
     minWidth: sizes.button.width,
     padding: 15,
-    marginTop: 20,
+    marginTop: 15,
     marginHorizontal: 4,
   },
   textButton: {

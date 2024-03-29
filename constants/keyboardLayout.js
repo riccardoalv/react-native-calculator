@@ -1,3 +1,4 @@
+import { ToastAndroid } from "react-native";
 import { icons } from "../constants";
 
 const keyboardLayout = [
@@ -34,7 +35,11 @@ const keyboardLayout = [
         .replace("×", "*")
         .replace("÷", "/")
         .replace("%", "/100 *");
-      return eval(calc).toString();
+      try {
+        return eval(calc).toString();
+      } catch (e) {
+        ToastAndroid.show("Invalid Expression", ToastAndroid.SHORT);
+      }
     },
   },
 ];

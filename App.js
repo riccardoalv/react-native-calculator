@@ -61,11 +61,13 @@ export default function App() {
               item={item}
               onPress={() => {
                 const value = item.handle(current);
-                if (item.text === "=") {
-                  setHistory(current);
-                  setCurrent(value);
-                } else {
-                  setCurrent(value);
+                if (value !== undefined) {
+                  if (item.text === "=") {
+                    setHistory(current);
+                    setCurrent(value);
+                  } else {
+                    setCurrent(value);
+                  }
                 }
               }}
             />
